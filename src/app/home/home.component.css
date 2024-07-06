@@ -84,6 +84,8 @@ section.our-story .story-content img {
   max-width: 50%;
   border-radius: 10px;
   margin-left: 20px;
+  object-fit: cover;
+  max-height: 300px; /* Added max-height to control the height */
 }
 
 section.our-story .story-text h3 {
@@ -199,6 +201,11 @@ section.contact-us .map-container iframe {
   section.our-story .story-content .story-text {
     max-width: 100%;
     margin-left: 0;
+  }
+
+  section.our-story .story-content img {
+    max-height: 200px; /* Adjusted max-height for mobile */
+    width: 100%; /* Ensure full width */
   }
 
   section.contact-us .contact-content {
