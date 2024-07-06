@@ -1,7 +1,8 @@
-import { Component, OnInit, Renderer2, ElementRef } from '@angular/core';
+import { Component, OnInit, Renderer2, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Location } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
@@ -12,11 +13,20 @@ import { Location } from '@angular/common';
 })
 export class NavbarComponent implements OnInit {
   isNavbarCollapsed = true;
+  isBrowser: boolean;
 
-  constructor(private location: Location, private renderer: Renderer2, private el: ElementRef) {}
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private location: Location,
+    private renderer: Renderer2
+  ) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+  }
 
   ngOnInit(): void {
-    this.setActiveLink();
+    if (this.isBrowser) {
+      this.setActiveLink();
+    }
   }
 
   toggleNavbar() {
@@ -24,12 +34,14 @@ export class NavbarComponent implements OnInit {
   }
 
   setActiveLink() {
-    const links = this.el.nativeElement.querySelectorAll('.nav-link');
-    links.forEach((link: HTMLElement) => {
-      this.renderer.removeClass(link, 'active');
-      if (link.getAttribute('href') === this.location.path()) {
-        this.renderer.addClass(link, 'active');
-      }
-    });
+    if (this.isBrowser) {
+      const links = document.querySelectorAll('.nav-link');
+      links.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('routerLink') === this.location.path()) {
+          link.classList.add('active');
+        }
+      });
+    }
   }
 }

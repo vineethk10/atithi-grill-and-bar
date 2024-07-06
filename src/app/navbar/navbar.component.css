@@ -1,54 +1,44 @@
+/* src/app/navbar/navbar.component.css */
 .navbar {
   background-color: #ffffff;
   border-bottom: 2px solid #28a745;
   padding: 10px 20px;
-}
-
-.navbar .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .navbar .navbar-brand {
-  font-family: 'Playfair Display', serif;
-  font-size: 24px;
-  color: #333;
-  font-weight: bold;
-  text-transform: uppercase;
+  display: flex;
+  align-items: center;
 }
 
-.navbar .navbar-brand:hover {
-  color: #218838;
+.navbar .navbar-logo {
+  height: 50px;
+  margin-right: 10px;
 }
 
 .navbar-nav .nav-item .nav-link {
   color: #333;
   font-size: 18px;
   margin-right: 15px;
-  transition: color 0.3s, border-bottom 0.3s;
-  border-bottom: 2px solid transparent;
+  transition: color 0.3s;
 }
 
+.navbar-nav .nav-item .nav-link:hover,
 .navbar-nav .nav-item .nav-link.active {
   color: #28a745;
   border-bottom: 2px solid #28a745;
 }
 
-.navbar-nav .nav-item .nav-link:hover {
-  color: #28a745;
-}
-
 .navbar .btn-outline-primary {
-  color: #333;
-  border-color: #333;
+  color: #28a745;
+  border-color: #28a745;
   transition: background-color 0.3s, color 0.3s;
-  font-weight: bold;
-  text-transform: uppercase;
 }
 
 .navbar .btn-outline-primary:hover {
-  background-color: #333;
+  background-color: #28a745;
   color: #ffffff;
 }
 
@@ -57,39 +47,38 @@
 }
 
 .navbar-toggler {
-  border: none;
-  background: transparent;
+  border-color: #28a745;
 }
 
 .navbar-toggler-icon {
-  font-size: 1.5em;
+  color: #28a745;
+  font-size: 24px;
+}
+
+.dropdown-menu {
+  background-color: #ffffff;
+  border: 1px solid #28a745;
+  width: 100%;  /* Ensures the dropdown is the same width as the parent */
+  min-width: 10rem;  /* Ensures it doesn't get too narrow */
+}
+
+.nav-item.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dropdown-item {
   color: #333;
 }
 
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-  .navbar-collapse {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .navbar-nav {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .navbar-nav .nav-item {
-    text-align: left;
-    width: 100%;
-  }
-
-  .navbar-nav .nav-item .nav-link {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .contact-button {
-    margin-left: 0;
-    margin-top: 10px;
-  }
+.dropdown-item:hover {
+  background-color: #28a745;
+  color: #ffffff;
 }

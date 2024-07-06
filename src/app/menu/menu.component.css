@@ -1,0 +1,12 @@
+/* src/app/menu/menu.component.css */
+.menu-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  #storefront-button {
+    margin-top: 20px;
+  }  
