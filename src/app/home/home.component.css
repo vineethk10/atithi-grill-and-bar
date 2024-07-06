@@ -1,0 +1,216 @@
+header.hero-section {
+  position: relative;
+  background-image: url('../../assets/restaurant-background.jpeg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+header.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+header .container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header h1 {
+  font-size: 56px;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header p {
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: #e0e0e0;
+}
+
+header .btn-primary {
+  background-color: #28a745;
+  border-color: #28a745;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+header .btn-primary:hover {
+  background-color: #218838;
+}
+
+section.our-story,
+section.our-services,
+section.contact-us {
+  padding: 50px 20px;
+}
+
+section.our-story .container,
+section.our-services .container,
+section.contact-us .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section.our-story .story-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between !important;
+  align-items: center;
+}
+
+section.our-story .story-content .story-text {
+  flex: 1;
+}
+
+section.our-story .story-content img {
+  flex: 1;
+  max-width: 50%;
+  border-radius: 10px;
+  margin-left: 20px;
+}
+
+section.our-story .story-text h3 {
+  font-size: 28px;
+  color: #333;
+}
+
+section.our-story .story-text p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+section.our-story .story-text .story-link {
+  color: #28a745;
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 2px solid #28a745;
+  padding-bottom: 2px;
+}
+
+section.our-services .services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+section.our-services .service-item {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+section.our-services .service-item img {
+  max-width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+section.our-services .service-item h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+section.our-services .service-item p {
+  font-size: 16px;
+}
+
+section.contact-us .contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+section.contact-us .contact-info {
+  flex: 1;
+  max-width: 100%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section.contact-us .contact-info h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+section.contact-us .contact-info p,
+section.contact-us .contact-info ul {
+  font-size: 16px;
+  color: #666;
+}
+
+section.contact-us .contact-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+section.contact-us .contact-info ul li {
+  margin-bottom: 10px;
+}
+
+section.contact-us .map-container {
+  flex: 1;
+  max-width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+section.contact-us .map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  section.our-story .story-content {
+    flex-direction: column;
+  }
+
+  section.our-story .story-content img,
+  section.our-story .story-content .story-text {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  section.contact-us .contact-content {
+    flex-direction: column;
+  }
+
+  section.contact-us .contact-info,
+  section.contact-us .map-container {
+    max-width: 100%;
+  }
+
+  section.our-services .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
