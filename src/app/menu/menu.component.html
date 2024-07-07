@@ -1,11 +1,147 @@
 <!-- src/app/menu/menu.component.html -->
 <div class="menu-container">
-  <script type="module">
-    import DoorDash from 'https://d1w2poirtb3as9.cloudfront.net/storefront/storefront_button.js';
-    DoorDash.StorefrontButton.init({
-      id: 'storefront-button',
-      storefrontUrl: 'https://order.online/business/atithi-grill-and-bar-12919228',
-    });
-  </script>
-  <div id="storefront-button"></div>
+  <h1 class="menu-title">Our Menu</h1>
+  <a routerLink="/orderonline" class="order-now-button">Order Now</a>
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs flex-wrap" id="menuTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="snacks-tab" data-bs-toggle="tab" href="#snacks" role="tab" aria-controls="snacks" aria-selected="true">Snacks</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="naan-tab" data-bs-toggle="tab" href="#naan" role="tab" aria-controls="naan" aria-selected="false">Naan</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="veg-tab" data-bs-toggle="tab" href="#veg" role="tab" aria-controls="veg" aria-selected="false">Veg Entrées</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="chicken-lamb-seafood-tab" data-bs-toggle="tab" href="#chicken-lamb-seafood" role="tab" aria-controls="chicken-lamb-seafood" aria-selected="false">Chicken / Lamb / Seafood Entrées</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="himalayas-tab" data-bs-toggle="tab" href="#himalayas" role="tab" aria-controls="himalayas" aria-selected="false">From the Himalayas</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="biryani-rice-tab" data-bs-toggle="tab" href="#biryani-rice" role="tab" aria-controls="biryani-rice" aria-selected="false">Biryani & Rice</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="sides-tab" data-bs-toggle="tab" href="#sides" role="tab" aria-controls="sides" aria-selected="false">Sides</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="desserts-tab" data-bs-toggle="tab" href="#desserts" role="tab" aria-controls="desserts" aria-selected="false">Desserts</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="drinks-tab" data-bs-toggle="tab" href="#drinks" role="tab" aria-controls="drinks" aria-selected="false">Soft Drinks</a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content" id="menuTabContent">
+    <div class="tab-pane fade show active" id="snacks" role="tabpanel" aria-labelledby="snacks-tab">
+      <div class="menu-section">
+        <div class="menu-item" *ngFor="let item of snacks">
+          <img [src]="item.image" alt="{{item.name}}" class="menu-item-image">
+          <div class="menu-item-details">
+            <h3 class="menu-item-name">{{item.name}} - {{item.price}}</h3>
+            <p class="menu-item-description">{{item.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="naan" role="tabpanel" aria-labelledby="naan-tab">
+      <div class="menu-section">
+        <div class="menu-item" *ngFor="let item of naanItems">
+          <img [src]="item.image" alt="{{item.name}}" class="menu-item-image">
+          <div class="menu-item-details">
+            <h3 class="menu-item-name">{{item.name}} - {{item.price}}</h3>
+            <p class="menu-item-description">{{item.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="veg" role="tabpanel" aria-labelledby="veg-tab">
+      <div class="menu-section">
+        <div class="menu-item" *ngFor="let item of vegEntrees">
+          <img [src]="item.image" alt="{{item.name}}" class="menu-item-image">
+          <div class="menu-item-details">
+            <h3 class="menu-item-name">{{item.name}} - {{item.price}}</h3>
+            <p class="menu-item-description">{{item.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="chicken-lamb-seafood" role="tabpanel" aria-labelledby="chicken-lamb-seafood-tab">
+      <div class="menu-section">
+        <div class="menu-item" *ngFor="let item of chickenLambSeafoodEntrees">
+          <img [src]="item.image" alt="{{item.name}}" class="menu-item-image">
+          <div class="menu-item-details">
+            <h3 class="menu-item-name">{{item.name}} - {{item.price}}</h3>
+            <p class="menu-item-description">{{item.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="himalayas" role="tabpanel" aria-labelledby="himalayas-tab">
+      <div class="menu-section">
+        <div class="menu-item" *ngFor="let item of himalayas">
+          <img [src]="item.image" alt="{{item.name}}" class="menu-item-image">
+          <div class="menu-item-details">
+            <h3 class="menu-item-name">{{item.name}} - {{item.price}}</h3>
+            <p class="menu-item-description">{{item.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="biryani-rice" role="tabpanel" aria-labelledby="biryani-rice-tab">
+      <div class="menu-section">
+        <div class="menu-item" *ngFor="let item of biryaniRice">
+          <img [src]="item.image" alt="{{item.name}}" class="menu-item-image">
+          <div class="menu-item-details">
+            <h3 class="menu-item-name">{{item.name}} - {{item.price}}</h3>
+            <p class="menu-item-description">{{item.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="sides" role="tabpanel" aria-labelledby="sides-tab">
+      <div class="menu-section">
+        <div class="menu-item" *ngFor="let item of sides">
+          <img [src]="item.image" alt="{{item.name}}" class="menu-item-image">
+          <div class="menu-item-details">
+            <h3 class="menu-item-name">{{item.name}} - {{item.price}}</h3>
+            <p class="menu-item-description">{{item.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="desserts" role="tabpanel" aria-labelledby="desserts-tab">
+      <div class="menu-section">
+        <div class="menu-item" *ngFor="let item of desserts">
+          <img [src]="item.image" alt="{{item.name}}" class="menu-item-image">
+          <div class="menu-item-details">
+            <h3 class="menu-item-name">{{item.name}} - {{item.price}}</h3>
+            <p class="menu-item-description">{{item.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="drinks" role="tabpanel" aria-labelledby="drinks-tab">
+      <div class="menu-section">
+        <div class="menu-item" *ngFor="let item of drinks">
+          <img [src]="item.image" alt="{{item.name}}" class="menu-item-image">
+          <div class="menu-item-details">
+            <h3 class="menu-item-name">{{item.name}} - {{item.price}}</h3>
+            <p class="menu-item-description">{{item.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

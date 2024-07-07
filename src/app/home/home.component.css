@@ -1,11 +1,14 @@
+/* Styling for the entire app to match a neutral color scheme */
+
+
 header.hero-section {
-  position: relative;
   background-image: url('../../assets/restaurant-background.jpeg');
   background-size: cover;
   background-position: center;
-  color: white;
+  color: #ffffff;
   text-align: center;
   padding: 100px 20px;
+  position: relative;
 }
 
 header.hero-section::before {
@@ -43,7 +46,7 @@ header p {
 header .btn-primary {
   background-color: #28a745;
   border-color: #28a745;
-  color: white;
+  color: #ffffff;
   padding: 12px 24px;
   text-decoration: none;
   border-radius: 5px;
@@ -53,6 +56,7 @@ header .btn-primary {
 
 header .btn-primary:hover {
   background-color: #218838;
+  color: #ffffff;
 }
 
 section.our-story,
@@ -84,19 +88,17 @@ section.our-story .story-content img {
   max-width: 50%;
   border-radius: 10px;
   margin-left: 20px;
-  object-fit: cover;
-  max-height: 300px; /* Added max-height to control the height */
 }
 
 section.our-story .story-text h3 {
   font-size: 28px;
-  color: #333;
+  color: #333333;
 }
 
 section.our-story .story-text p {
   font-size: 18px;
   margin-bottom: 20px;
-  color: #666;
+  color: #666666;
 }
 
 section.our-story .story-text .story-link {
@@ -136,10 +138,12 @@ section.our-services .service-item img {
 section.our-services .service-item h3 {
   font-size: 22px;
   margin-bottom: 10px;
+  color: #333333;
 }
 
 section.our-services .service-item p {
   font-size: 16px;
+  color: #666666;
 }
 
 section.contact-us .contact-content {
@@ -160,64 +164,11 @@ section.contact-us .contact-info {
 section.contact-us .contact-info h3 {
   font-size: 22px;
   margin-bottom: 10px;
-  color: #333;
+  color: #333333;
 }
 
 section.contact-us .contact-info p,
 section.contact-us .contact-info ul {
   font-size: 16px;
-  color: #666;
-}
-
-section.contact-us .contact-info ul {
-  list-style: none;
-  padding: 0;
-}
-
-section.contact-us .contact-info ul li {
-  margin-bottom: 10px;
-}
-
-section.contact-us .map-container {
-  flex: 1;
-  max-width: 100%;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-section.contact-us .map-container iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-  section.our-story .story-content {
-    flex-direction: column;
-  }
-
-  section.our-story .story-content img,
-  section.our-story .story-content .story-text {
-    max-width: 100%;
-    margin-left: 0;
-  }
-
-  section.our-story .story-content img {
-    max-height: 200px; /* Adjusted max-height for mobile */
-    width: 100%; /* Ensure full width */
-  }
-
-  section.contact-us .contact-content {
-    flex-direction: column;
-  }
-
-  section.contact-us .contact-info,
-  section.contact-us .map-container {
-    max-width: 100%;
-  }
-
-  section.our-services .services-grid {
-    grid-template-columns: 1fr;
-  }
+  color: #666666;
 }

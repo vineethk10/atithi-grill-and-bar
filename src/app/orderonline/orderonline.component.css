@@ -29,6 +29,25 @@
     color: #444;
 }
 
+.order-direct {
+    margin-bottom: 20px;
+}
+
+.order-direct-link {
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    background-color: #28a745;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.order-direct-link:hover {
+    background-color: #218838;
+}
+
 .order-buttons {
     display: flex;
     flex-direction: row;
@@ -101,11 +120,14 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .reservation-details {
     display: inline-block;
     text-align: left;
+    margin-top: 20px;
 }
 
 .reservation-section p {
@@ -132,5 +154,13 @@
 
     .order-option {
         max-width: 100%;
+    }
+
+    .reservation-section {
+        padding: 15px;
+    }
+
+    .reservation-section p {
+        font-size: 16px;
     }
 }

@@ -1,12 +1,109 @@
 /* src/app/menu/menu.component.css */
 .menu-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  #storefront-button {
-    margin-top: 20px;
-  }  
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #28a745;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.order-now-button {
+  display: block;
+  text-align: center;
+  margin: 20px auto;
+  font-size: 18px;
+  color: #fff;
+  background-color: #28a745;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.order-now-button:hover {
+  background-color: #218838;
+}
+
+.nav-tabs {
+  justify-content: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #ddd;
+  flex-wrap: wrap;
+}
+
+.nav-tabs .nav-item {
+  margin-bottom: -1px;
+}
+
+.nav-tabs .nav-link {
+  font-size: 18px;
+  color: #333;
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 5px 5px 0 0;
+  margin: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: #28a745;
+  color: #fff;
+  border-color: #28a745 #28a745 #ddd;
+}
+
+.nav-tabs .nav-link:hover {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.menu-section {
+  margin-bottom: 40px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Hide images */
+.menu-item-image {
+  display: none;
+}
+
+.menu-item-details {
+  flex: 1;
+}
+
+.menu-item-name {
+  font-size: 20px;
+  color: #333333;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.menu-item-description {
+  font-size: 16px;
+  color: #666666;
+}
