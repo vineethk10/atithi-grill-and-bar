@@ -1,4 +1,3 @@
-<!-- src/app/menu/menu.component.html -->
 <div class="menu-container">
   <h1 class="menu-title">Our Menu</h1>
   <a routerLink="/orderonline" class="order-now-button">Order Now</a>
@@ -39,7 +38,6 @@
     <div class="tab-pane fade show active" id="snacks" role="tabpanel" aria-labelledby="snacks-tab">
       <div class="menu-section">
         <div class="menu-item" *ngFor="let item of snacks">
-          <img [src]="item.image" alt="{{item.name}}" class="menu-item-image">
           <div class="menu-item-details">
             <h3 class="menu-item-name">{{item.name}} - {{item.price}}</h3>
             <p class="menu-item-description">{{item.description}}</p>
@@ -51,7 +49,6 @@
     <div class="tab-pane fade" id="naan" role="tabpanel" aria-labelledby="naan-tab">
       <div class="menu-section">
         <div class="menu-item" *ngFor="let item of naanItems">
-          <img [src]="item.image" alt="{{item.name}}" class="menu-item-image">
           <div class="menu-item-details">
             <h3 class="menu-item-name">{{item.name}} - {{item.price}}</h3>
             <p class="menu-item-description">{{item.description}}</p>
@@ -63,7 +60,6 @@
     <div class="tab-pane fade" id="veg" role="tabpanel" aria-labelledby="veg-tab">
       <div class="menu-section">
         <div class="menu-item" *ngFor="let item of vegEntrees">
-          <img [src]="item.image" alt="{{item.name}}" class="menu-item-image">
           <div class="menu-item-details">
             <h3 class="menu-item-name">{{item.name}} - {{item.price}}</h3>
             <p class="menu-item-description">{{item.description}}</p>
@@ -75,7 +71,6 @@
     <div class="tab-pane fade" id="chicken-lamb-seafood" role="tabpanel" aria-labelledby="chicken-lamb-seafood-tab">
       <div class="menu-section">
         <div class="menu-item" *ngFor="let item of chickenLambSeafoodEntrees">
-          <img [src]="item.image" alt="{{item.name}}" class="menu-item-image">
           <div class="menu-item-details">
             <h3 class="menu-item-name">{{item.name}} - {{item.price}}</h3>
             <p class="menu-item-description">{{item.description}}</p>
@@ -87,7 +82,6 @@
     <div class="tab-pane fade" id="himalayas" role="tabpanel" aria-labelledby="himalayas-tab">
       <div class="menu-section">
         <div class="menu-item" *ngFor="let item of himalayas">
-          <img [src]="item.image" alt="{{item.name}}" class="menu-item-image">
           <div class="menu-item-details">
             <h3 class="menu-item-name">{{item.name}} - {{item.price}}</h3>
             <p class="menu-item-description">{{item.description}}</p>
@@ -99,7 +93,6 @@
     <div class="tab-pane fade" id="biryani-rice" role="tabpanel" aria-labelledby="biryani-rice-tab">
       <div class="menu-section">
         <div class="menu-item" *ngFor="let item of biryaniRice">
-          <img [src]="item.image" alt="{{item.name}}" class="menu-item-image">
           <div class="menu-item-details">
             <h3 class="menu-item-name">{{item.name}} - {{item.price}}</h3>
             <p class="menu-item-description">{{item.description}}</p>
@@ -111,7 +104,6 @@
     <div class="tab-pane fade" id="sides" role="tabpanel" aria-labelledby="sides-tab">
       <div class="menu-section">
         <div class="menu-item" *ngFor="let item of sides">
-          <img [src]="item.image" alt="{{item.name}}" class="menu-item-image">
           <div class="menu-item-details">
             <h3 class="menu-item-name">{{item.name}} - {{item.price}}</h3>
             <p class="menu-item-description">{{item.description}}</p>
@@ -123,7 +115,6 @@
     <div class="tab-pane fade" id="desserts" role="tabpanel" aria-labelledby="desserts-tab">
       <div class="menu-section">
         <div class="menu-item" *ngFor="let item of desserts">
-          <img [src]="item.image" alt="{{item.name}}" class="menu-item-image">
           <div class="menu-item-details">
             <h3 class="menu-item-name">{{item.name}} - {{item.price}}</h3>
             <p class="menu-item-description">{{item.description}}</p>
@@ -135,7 +126,6 @@
     <div class="tab-pane fade" id="drinks" role="tabpanel" aria-labelledby="drinks-tab">
       <div class="menu-section">
         <div class="menu-item" *ngFor="let item of drinks">
-          <img [src]="item.image" alt="{{item.name}}" class="menu-item-image">
           <div class="menu-item-details">
             <h3 class="menu-item-name">{{item.name}} - {{item.price}}</h3>
             <p class="menu-item-description">{{item.description}}</p>
