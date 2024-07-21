@@ -1,8 +1,7 @@
 /* Styling for the entire app to match a neutral color scheme */
 
-
 header.hero-section {
-  background-image: url('../../assets/restaurant-background.jpeg');
+  background-image: url('../../assets/restaurant-background.jpeg'); /* Updated path */
   background-size: cover;
   background-position: center;
   color: #ffffff;
@@ -59,6 +58,49 @@ header .btn-primary:hover {
   color: #ffffff;
 }
 
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  header.hero-section {
+    padding: 50px 10px;
+  }
+
+  header h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  header p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  header .btn-primary {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  header.hero-section {
+    padding: 30px 10px;
+  }
+
+  header h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  header p {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  header .btn-primary {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
 section.our-story,
 section.our-services,
 section.contact-us {
@@ -75,7 +117,7 @@ section.contact-us .container {
 section.our-story .story-content {
   display: flex;
   flex-direction: row;
-  justify-content: space-between !important;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -171,4 +213,169 @@ section.contact-us .contact-info p,
 section.contact-us .contact-info ul {
   font-size: 16px;
   color: #666666;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  section.our-story .story-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section.our-story .story-content img {
+    max-width: 100%;
+    margin: 20px 0;
+    order: -1; /* Move image before text */
+  }
+
+  section.our-story .story-text {
+    text-align: center;
+  }
+
+  header.hero-section {
+    padding: 50px 10px;
+  }
+
+  header h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  header p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  header .btn-primary {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  header.hero-section {
+    padding: 30px 10px;
+  }
+
+  header h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  header p {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  header .btn-primary {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  section.our-story .story-content img {
+    max-width: 100%;
+    order: -1; /* Move image before text */
+  }
+
+  section.our-story .story-text {
+    text-align: center;
+  }
+}
+
+/* Map container styling */
+.map-container {
+  width: 100%;
+  height: 400px;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+section.contact-us {
+  padding: 50px 20px;
+}
+
+section.contact-us .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section.contact-us .contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+section.contact-us .contact-info,
+section.contact-us .hours-info {
+  flex: 1;
+  max-width: 100%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section.contact-us .contact-info h3,
+section.contact-us .hours-info h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #333333;
+}
+
+section.contact-us .contact-info p,
+section.contact-us .contact-info ul,
+section.contact-us .hours-info p,
+section.contact-us .hours-info ul {
+  font-size: 16px;
+  color: #666666;
+}
+
+/* Media query for larger screens */
+@media (min-width: 769px) {
+  section.contact-us {
+    flex-direction: row;
+  }
+
+  .map-container {
+    flex: 1;
+    height: auto; /* let the height adjust based on the content */
+  }
+
+  section.contact-us .contact-content {
+    flex-direction: row;
+  }
+
+  section.contact-us .contact-info,
+  section.contact-us .hours-info {
+    max-width: 50%;
+  }
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .map-container {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .map-container {
+    height: 200px;
+  }
+
+  section.contact-us .contact-content {
+    flex-direction: column;
+  }
+
+  section.contact-us .contact-info,
+  section.contact-us .hours-info {
+    max-width: 100%;
+  }
 }

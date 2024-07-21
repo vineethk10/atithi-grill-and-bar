@@ -1,0 +1,21 @@
+<section class="events" id="events">
+  <div class="container">
+    <h2 class="section-title">Events</h2>
+    <div class="events-grid">
+      <div class="event-card" *ngFor="let event of sortedEvents">
+        <div class="card">
+          <div class="image-container">
+            <img [ngSrc]="event.imageUrl" [width]="event.width" [height]="event.height" [priority]="true" class="card-img-top" [alt]="event.title">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ event.title }}</h5>
+            <p class="card-date">{{ event.date | date: 'EEEE, MMMM d, y' }}</p>
+            <p class="card-text">{{ event.description }}</p>
+            <button *ngIf="!isPastEvent(event.date)" class="btn btn-primary" (click)="bookEvent(event)">Book Now</button>
+            <span *ngIf="isPastEvent(event.date)" class="expired">Event Ended</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
