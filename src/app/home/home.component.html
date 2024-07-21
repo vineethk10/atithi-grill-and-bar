@@ -1,9 +1,18 @@
 <!-- src/app/home/home.component.html -->
 <header class="hero-section">
-  <div class="container">
-    <h1>Atithi Grill and Bar</h1>
-    <p>Experience the vibrant flavors of South East Asian cuisine in the heart of Austin Round Rock, Texas.</p>
-    <a class="btn btn-primary" routerLink="/menu" aria-label="Menu">View Menu</a>
+  <div class="video-container">
+    <video #heroVideo class="d-block w-100" autoplay loop muted playsinline>
+      <source src="../../assets/background-video-compressed1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="overlay-text">
+      <h1>Atithi Grill and Bar</h1>
+      <p>Experience the vibrant flavors of South East Asian cuisine in the heart of Austin Round Rock, Texas.</p>
+      <a class="btn btn-primary" routerLink="/menu" aria-label="Menu">View Menu</a>
+    </div>
+    <button #playPauseButton class="play-pause-btn">
+      <i class="fas fa-pause"></i>
+    </button>
   </div>
 </header>
 
@@ -43,8 +52,8 @@
         <p>Indulge in an elegant and sophisticated dining experience.</p>
       </div>
       <div class="service-item">
-        <img src="../../assets/cocktails.jpg" alt="Exotic Cocktails and Mocktails">
-        <h3>Exotic Cocktails and Mocktails</h3>
+        <img src="../../assets/cocktails.jpg" alt="Exotic Cocktails and Refreshing Mocktails">
+        <h3>Exotic Cocktails and Refreshing Mocktails</h3>
         <p>Sip on exotic cocktails and refreshing mocktails.</p>
       </div>
       <div class="service-item">
