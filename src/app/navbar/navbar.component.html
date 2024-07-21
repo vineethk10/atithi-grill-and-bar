@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-light">
   <div class="container">
     <div class="d-flex align-items-center justify-content-between w-100">
-      <a class="navbar-brand" routerLink="/" (click)="setActiveLink($event)">
+      <a class="navbar-brand" routerLink="/" (click)="onNavItemClick($event)">
         ATITHI GRILL AND BAR
       </a>
       <button class="navbar-toggler" type="button" (click)="toggleNavbar()" [attr.aria-controls]="'navbarNav'" [attr.aria-expanded]="!isNavbarCollapsed" aria-label="Toggle navigation">
@@ -28,9 +28,9 @@
             Order
           </a>
           <div class="dropdown-menu" aria-labelledby="orderDropdown">
-            <a class="dropdown-item" href="https://www.clover.com/online-ordering/atithi-grill--bar-round-rock" target="_self">Directly from Us</a>
-            <a class="dropdown-item" href="https://order.online/business/atithi-grill-and-bar-12919228" target="_self">DoorDash</a>
-            <a class="dropdown-item" href="http://menus.fyi/8561360" target="_self">GrubHub</a>
+            <a class="dropdown-item" href="https://www.clover.com/online-ordering/atithi-grill--bar-round-rock" target="_self" (click)="toggleNavbar()">Directly from Us</a>
+            <a class="dropdown-item" href="https://order.online/business/atithi-grill-and-bar-12919228" target="_self" (click)="toggleNavbar()">DoorDash</a>
+            <a class="dropdown-item" href="http://menus.fyi/8561360" target="_self" (click)="toggleNavbar()">GrubHub</a>
           </div>
         </li>
       </ul>
