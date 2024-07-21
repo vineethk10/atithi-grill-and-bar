@@ -11,5 +11,5 @@ import { NgOptimizedImage } from '@angular/common';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-
+  ourStoryImagePath = '../../assets/our-story.jpeg';
 }

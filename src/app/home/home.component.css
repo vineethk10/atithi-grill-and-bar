@@ -1,7 +1,19 @@
-/* Styling for the entire app to match a neutral color scheme */
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333333;
+}
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles */
 header.hero-section {
-  background-image: url('../../assets/restaurant-background.jpeg'); /* Updated path */
+  background-image: url('../../assets/restaurant-background.jpeg');
   background-size: cover;
   background-position: center;
   color: #ffffff;
@@ -24,8 +36,6 @@ header.hero-section::before {
 header .container {
   position: relative;
   z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 header h1 {
@@ -55,95 +65,48 @@ header .btn-primary {
 
 header .btn-primary:hover {
   background-color: #218838;
-  color: #ffffff;
 }
 
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-  header.hero-section {
-    padding: 50px 10px;
-  }
-
-  header h1 {
-    font-size: 32px;
-    margin-bottom: 15px;
-  }
-
-  header p {
-    font-size: 18px;
-    margin-bottom: 20px;
-  }
-
-  header .btn-primary {
-    padding: 10px 20px;
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  header.hero-section {
-    padding: 30px 10px;
-  }
-
-  header h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-
-  header p {
-    font-size: 16px;
-    margin-bottom: 15px;
-  }
-
-  header .btn-primary {
-    padding: 8px 16px;
-    font-size: 14px;
-  }
-}
-
+/* Section Styles */
 section.our-story,
 section.our-services,
 section.contact-us {
   padding: 50px 20px;
 }
 
-section.our-story .container,
-section.our-services .container,
-section.contact-us .container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-section.our-story .story-content {
+/* Our Story Section */
+.story-content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-section.our-story .story-content .story-text {
+.story-content .story-text {
   flex: 1;
 }
 
-section.our-story .story-content img {
+.story-content img {
   flex: 1;
   max-width: 50%;
   border-radius: 10px;
   margin-left: 20px;
+  height: auto;
+  object-fit: cover;
 }
 
-section.our-story .story-text h3 {
+.story-text h3 {
   font-size: 28px;
   color: #333333;
 }
 
-section.our-story .story-text p {
+.story-text p {
   font-size: 18px;
   margin-bottom: 20px;
   color: #666666;
 }
 
-section.our-story .story-text .story-link {
+.story-text .story-link {
   color: #28a745;
   text-decoration: none;
   font-weight: bold;
@@ -151,13 +114,14 @@ section.our-story .story-text .story-link {
   padding-bottom: 2px;
 }
 
-section.our-services .services-grid {
+/* Our Services Section */
+.services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
 
-section.our-services .service-item {
+.service-item {
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -169,7 +133,7 @@ section.our-services .service-item {
   height: 100%;
 }
 
-section.our-services .service-item img {
+.service-item img {
   max-width: 100%;
   height: 200px;
   object-fit: cover;
@@ -177,24 +141,26 @@ section.our-services .service-item img {
   margin-bottom: 20px;
 }
 
-section.our-services .service-item h3 {
+.service-item h3 {
   font-size: 22px;
   margin-bottom: 10px;
   color: #333333;
 }
 
-section.our-services .service-item p {
+.service-item p {
   font-size: 16px;
   color: #666666;
 }
 
-section.contact-us .contact-content {
+/* Contact Us Section */
+.contact-content {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
 
-section.contact-us .contact-info {
+.contact-info,
+.hours-info {
   flex: 1;
   max-width: 100%;
   padding: 20px;
@@ -203,86 +169,22 @@ section.contact-us .contact-info {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-section.contact-us .contact-info h3 {
+.contact-info h3,
+.hours-info h3 {
   font-size: 22px;
   margin-bottom: 10px;
   color: #333333;
 }
 
-section.contact-us .contact-info p,
-section.contact-us .contact-info ul {
+.contact-info p,
+.contact-info ul,
+.hours-info p,
+.hours-info ul {
   font-size: 16px;
   color: #666666;
 }
 
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-  section.our-story .story-content {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  section.our-story .story-content img {
-    max-width: 100%;
-    margin: 20px 0;
-    order: -1; /* Move image before text */
-  }
-
-  section.our-story .story-text {
-    text-align: center;
-  }
-
-  header.hero-section {
-    padding: 50px 10px;
-  }
-
-  header h1 {
-    font-size: 32px;
-    margin-bottom: 15px;
-  }
-
-  header p {
-    font-size: 18px;
-    margin-bottom: 20px;
-  }
-
-  header .btn-primary {
-    padding: 10px 20px;
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  header.hero-section {
-    padding: 30px 10px;
-  }
-
-  header h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-
-  header p {
-    font-size: 16px;
-    margin-bottom: 15px;
-  }
-
-  header .btn-primary {
-    padding: 8px 16px;
-    font-size: 14px;
-  }
-
-  section.our-story .story-content img {
-    max-width: 100%;
-    order: -1; /* Move image before text */
-  }
-
-  section.our-story .story-text {
-    text-align: center;
-  }
-}
-
-/* Map container styling */
+/* Map Container */
 .map-container {
   width: 100%;
   height: 400px;
@@ -297,47 +199,7 @@ section.contact-us .contact-info ul {
   border: 0;
 }
 
-section.contact-us {
-  padding: 50px 20px;
-}
-
-section.contact-us .container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-section.contact-us .contact-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-section.contact-us .contact-info,
-section.contact-us .hours-info {
-  flex: 1;
-  max-width: 100%;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-section.contact-us .contact-info h3,
-section.contact-us .hours-info h3 {
-  font-size: 22px;
-  margin-bottom: 10px;
-  color: #333333;
-}
-
-section.contact-us .contact-info p,
-section.contact-us .contact-info ul,
-section.contact-us .hours-info p,
-section.contact-us .hours-info ul {
-  font-size: 16px;
-  color: #666666;
-}
-
-/* Media query for larger screens */
+/* Media Queries */
 @media (min-width: 769px) {
   section.contact-us {
     flex-direction: row;
@@ -345,37 +207,93 @@ section.contact-us .hours-info ul {
 
   .map-container {
     flex: 1;
-    height: auto; /* let the height adjust based on the content */
+    height: auto;
   }
 
-  section.contact-us .contact-content {
+  .contact-content {
     flex-direction: row;
   }
 
-  section.contact-us .contact-info,
-  section.contact-us .hours-info {
+  .contact-info,
+  .hours-info {
+    max-width: 50%;
+  }
+
+  .story-content img {
+    width: auto;
     max-width: 50%;
   }
 }
 
-/* Media query for smaller screens */
 @media (max-width: 768px) {
+  header.hero-section {
+    padding: 50px 10px;
+  }
+
+  header h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  header p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  header .btn-primary {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  .story-content {
+    flex-direction: column;
+  }
+
+  .story-content img {
+    max-width: 100%;
+    margin: 20px 0;
+    order: -1;
+  }
+
+  .story-text {
+    text-align: center;
+  }
+
   .map-container {
     height: 300px;
   }
 }
 
 @media (max-width: 480px) {
+  header.hero-section {
+    padding: 30px 10px;
+  }
+
+  header h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  header p {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  header .btn-primary {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
   .map-container {
     height: 200px;
   }
 
-  section.contact-us .contact-content {
+  .contact-content {
     flex-direction: column;
   }
 
-  section.contact-us .contact-info,
-  section.contact-us .hours-info {
+  .contact-info,
+  .hours-info {
     max-width: 100%;
   }
 }

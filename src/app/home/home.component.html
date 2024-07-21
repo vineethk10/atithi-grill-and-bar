@@ -16,7 +16,13 @@
         </p>
         <a class="story-link" href="#contact">Make Reservations</a>
       </div>
-      <img src="../../assets/our-story.jpeg" alt="Our Story">
+      <img 
+        [ngSrc]="ourStoryImagePath" 
+        alt="Our Story" 
+        width="696" 
+        height="354"
+        priority
+      >
     </div>
   </div>
 </section>
