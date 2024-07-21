@@ -33,7 +33,7 @@ export class NavbarComponent implements OnInit {
     this.isNavbarCollapsed = !this.isNavbarCollapsed;
   }
 
-  setActiveLink() {
+  setActiveLink(event?: Event) {
     if (this.isBrowser) {
       const links = document.querySelectorAll('.nav-link');
       links.forEach(link => {
@@ -42,6 +42,21 @@ export class NavbarComponent implements OnInit {
           link.classList.add('active');
         }
       });
+      if (event) {
+        const clickedLink = event.target as HTMLElement;
+        links.forEach(link => {
+          if (link === clickedLink) {
+            link.classList.add('active');
+          }
+        });
+      }
     }
+  }
+
+  onNavItemClick(event: Event) {
+    if (this.isBrowser && !this.isNavbarCollapsed) {
+      this.toggleNavbar();
+    }
+    this.setActiveLink(event);
   }
 }

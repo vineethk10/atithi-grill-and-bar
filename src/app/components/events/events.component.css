@@ -130,6 +130,13 @@
   font-weight: 600;
 }
 
+.booking-message {
+  color: #dc3545;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
 @media (max-width: 768px) {
   .section-title {
     font-size: 28px;

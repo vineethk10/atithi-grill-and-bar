@@ -13,6 +13,7 @@
             <p class="card-text">{{ event.description }}</p>
             <button *ngIf="!isPastEvent(event.date)" class="btn btn-primary" (click)="bookEvent(event)">Book Now</button>
             <span *ngIf="isPastEvent(event.date)" class="expired">Event Ended</span>
+            <p *ngIf="event.bookingMessage" class="booking-message">{{ event.bookingMessage }}</p>
           </div>
         </div>
       </div>

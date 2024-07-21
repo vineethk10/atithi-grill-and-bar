@@ -9,6 +9,8 @@ interface Event {
   imageUrl: string;
   width: number;
   height: number;
+  bookingLink?: string;
+  bookingMessage?: string; // Add a property for booking message
 }
 
 @Component({
@@ -26,7 +28,8 @@ export class EventsComponent implements OnInit {
       date: new Date('2024-07-04T00:00:00'),
       imageUrl: '../../assets/Events/FourthOfJuly.jpg',
       width: 1600,
-      height: 900
+      height: 900,
+      bookingLink: 'https://example.com/book-fourthofjuly'
     },
     {
       title: 'Watch Party: India vs Pakistan T20 World Cup',
@@ -34,7 +37,8 @@ export class EventsComponent implements OnInit {
       date: new Date('2024-06-09T00:00:00'),
       imageUrl: '../../assets/Events/watchparty_indpak.jpg',
       width: 772,
-      height: 1000
+      height: 1000,
+      bookingLink: ''
     },
     {
       title: 'Watch Party: India vs South Africa T20 World Cup Final',
@@ -51,6 +55,15 @@ export class EventsComponent implements OnInit {
       imageUrl: '../../assets/Events/yogaDay2024.jpeg',
       width: 1080,
       height: 1080
+    },
+    {
+      title: 'Thanksgiving Dinner',
+      description: 'Join us for a delightful Thanksgiving Dinner at Atithi Grill and Bar. Enjoy a traditional Thanksgiving meal with a South Asian twist. Bring your family and friends to celebrate!',
+      date: new Date('2024-11-28T00:00:00'),
+      imageUrl: '../../assets/Events/thanksgivingdinner-2024.jpg',
+      width: 1080,
+      height: 1080,
+      bookingLink: ''
     }
   ];
 
@@ -65,8 +78,12 @@ export class EventsComponent implements OnInit {
     today.setHours(0, 0, 0, 0);
     return date < today;
   }
+
   bookEvent(event: Event): void {
-    alert(`Booking event: ${event.title}`);
-    // Implement the booking logic here
+    if (event.bookingLink) {
+      window.location.href = event.bookingLink;
+    } else {
+      event.bookingMessage = `Booking for the event "${event.title}" has not yet started.`;
+    }
   }
 }

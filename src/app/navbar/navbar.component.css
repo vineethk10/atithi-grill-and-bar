@@ -17,9 +17,13 @@
   font-weight: bold;
 }
 
-.navbar .navbar-logo {
-  height: 50px;
-  margin-right: 10px;
+.navbar-toggler {
+  border-color: #28a745;
+}
+
+.navbar-toggler-icon {
+  color: #28a745;
+  font-size: 24px;
 }
 
 .navbar-nav .nav-item .nav-link {
@@ -35,17 +39,6 @@
   border-bottom: 2px solid #28a745;
 }
 
-.navbar .btn-outline-primary {
-  color: #28a745;
-  border-color: #28a745;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.navbar .btn-outline-primary:hover {
-  background-color: #28a745;
-  color: #ffffff;
-}
-
 .contact-button {
   margin-left: auto;
   background-color: #28a745;
@@ -53,24 +46,11 @@
   color: #ffffff;
 }
 
-.navbar-toggler {
-  border-color: #28a745;
-}
-
-.navbar-toggler-icon {
-  color: #28a745;
-  font-size: 24px;
-}
-
 .dropdown-menu {
   background-color: #ffffff;
   border: 1px solid #28a745;
   width: 100%;
   min-width: fit-content; /* Ensure the dropdown doesn't shrink below the button width */
-}
-
-.nav-item.dropdown {
-  position: relative;
 }
 
 .nav-item.dropdown .nav-link {
@@ -91,4 +71,19 @@
 .dropdown-item:hover {
   background-color: #28a745;
   color: #ffffff;
+}
+
+/* Mobile specific styles */
+@media (max-width: 992px) {
+  .navbar-nav {
+    flex-direction: column;
+  }
+
+  .nav-item {
+    margin-bottom: 10px;
+  }
+
+  .contact-button {
+    margin-top: 10px;
+  }
 }
