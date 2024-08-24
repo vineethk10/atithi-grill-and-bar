@@ -1,11 +1,16 @@
+<section class="events-hero">
+  <div class="hero-content">
+    <h1>Events</h1>
+    <p>Join us for our special events. Book your spot today!</p>
+  </div>
+</section>
 <section class="events" id="events">
   <div class="container">
-    <h2 class="section-title">Events</h2>
     <div class="events-grid">
       <div class="event-card" *ngFor="let event of sortedEvents">
         <div class="card">
           <div class="image-container">
-            <img [ngSrc]="event.imageUrl" [width]="event.width" [height]="event.height" [priority]="true" class="card-img-top" [alt]="event.title">
+            <img [ngSrc]="event.imageUrl" [width]="event.width" [height]="event.height" class="card-img-top" [alt]="event.title">
           </div>
           <div class="card-body">
             <h5 class="card-title">{{ event.title }}</h5>

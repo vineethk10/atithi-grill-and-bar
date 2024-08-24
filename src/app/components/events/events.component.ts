@@ -64,8 +64,18 @@ export class EventsComponent implements OnInit {
       width: 1080,
       height: 1080,
       bookingLink: ''
-    }
-  ];
+    },
+  
+    {
+      title: 'Musical Evening with Abhishek Kumar',
+      date: new Date('2024-08-13'),
+      description: 'Join us for a musical evening with Abhishek Kumar, Indian Idol Season 3 Finalist. Enjoy a night of live music and entertainment at Atithi Grill and Bar.',
+      imageUrl: 'assets/Events/singer-abhishek.jpg',
+      width: 696,
+      height: 354,
+      bookingLink: ''
+    },
+];
 
   sortedEvents: Event[] = [];
 
