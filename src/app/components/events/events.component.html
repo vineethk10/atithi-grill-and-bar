@@ -6,11 +6,16 @@
 </section>
 <section class="events" id="events">
   <div class="container">
+        <!-- Loader to show while the images are loading -->
+        <div *ngIf="isContentLoading" class="loader-container">
+          <div class="loader"></div>
+        </div>
     <div class="events-grid">
       <div class="event-card" *ngFor="let event of sortedEvents">
         <div class="card">
           <div class="image-container">
-            <img [ngSrc]="event.imageUrl" [width]="event.width" [height]="event.height" class="card-img-top" [alt]="event.title">
+            <img [ngSrc]="event.imageUrl" [width]="event.width" [height]="event.height" class="card-img-top" [alt]="event.title" (load)="onContentLoad()" 
+            (error)="onContentLoad()">
           </div>
           <div class="card-body">
             <h5 class="card-title">{{ event.title }}</h5>
