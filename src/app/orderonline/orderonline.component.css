@@ -1,22 +1,21 @@
-/* src/app/orderonline/orderonline.component.css */
 .order-online-container {
     text-align: center;
     padding: 50px 20px;
-    background-color: #fafafa;
-    color: #333;
-    font-family: 'Arial', sans-serif;
+    background-color: rgb(53, 53, 53); /* Updated background color */
+    color: rgb(240, 214, 187); /* Updated text color */
+    font-family: 'Source Sans Pro', sans-serif; /* Updated font */
 }
 
 .order-online-container h2 {
     font-size: 36px;
     margin-bottom: 20px;
-    color: #444;
+    color: rgb(240, 214, 187); /* Updated header color */
 }
 
 .order-online-container p {
     font-size: 18px;
     margin-bottom: 40px;
-    color: #777;
+    color: rgb(160, 138, 127); /* Updated paragraph color */
 }
 
 .order-section, .reservation-section {
@@ -26,7 +25,7 @@
 .order-section h3, .reservation-section h3 {
     font-size: 28px;
     margin-bottom: 15px;
-    color: #444;
+    color: rgb(240, 214, 187); /* Updated section header color */
 }
 
 .order-direct {
@@ -36,8 +35,8 @@
 .order-direct-link {
     display: inline-block;
     font-size: 18px;
-    color: #fff;
-    background-color: #28a745;
+    color: rgb(240, 214, 187); /* Updated button text color */
+    background-color: rgb(160, 138, 127); /* Updated button background */
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
@@ -45,7 +44,8 @@
 }
 
 .order-direct-link:hover {
-    background-color: #218838;
+    background-color: rgb(240, 214, 187); /* Updated hover background */
+    color: rgb(53, 53, 53); /* Updated hover text color */
 }
 
 .order-buttons {
@@ -59,7 +59,7 @@
 .order-option {
     flex: 1;
     max-width: 300px;
-    background-color: #fff;
+    background-color: rgb(53, 53, 53); /* Updated background color */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -80,7 +80,7 @@
 
 .order-option span {
     font-size: 18px;
-    color: #444;
+    color: rgb(240, 214, 187); /* Updated text color */
     font-weight: bold;
     margin-top: auto;
     display: block;
@@ -95,7 +95,7 @@
 }
 
 .order-option a:hover span {
-    color: #28a745;
+    color: rgb(160, 138, 127); /* Updated hover color */
 }
 
 .order-option a::after {
@@ -103,7 +103,7 @@
     display: block;
     width: 100%;
     height: 2px;
-    background-color: #28a745;
+    background-color: rgb(160, 138, 127); /* Updated underline color */
     margin-top: 10px;
     transition: transform 0.3s;
     transform: scaleX(0);
@@ -116,7 +116,7 @@
 
 .reservation-section {
     text-align: center;
-    background-color: #fff;
+    background-color: rgb(53, 53, 53); /* Updated background color */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -132,12 +132,12 @@
 
 .reservation-section p {
     font-size: 18px;
-    color: #555;
+    color: rgb(160, 138, 127); /* Updated paragraph color */
     margin-bottom: 10px;
 }
 
 .reservation-section a {
-    color: #28a745;
+    color: rgb(160, 138, 127); /* Updated link color */
     text-decoration: none;
 }
 

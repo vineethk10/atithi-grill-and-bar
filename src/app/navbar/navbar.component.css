@@ -1,7 +1,6 @@
-/* src/app/navbar/navbar.component.css */
 .navbar {
-  background-color: #ffffff;
-  border-bottom: 2px solid #28a745;
+  background-color: rgb(53, 53, 53); /* Updated background color */
+  border-bottom: 2px solid rgb(160, 138, 127); /* Updated border color */
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -11,44 +10,58 @@
 .navbar .navbar-brand {
   display: flex;
   align-items: center;
-  color: #333333;
-  font-family: 'Playfair Display', serif;
+  color: rgb(240, 214, 187); /* Updated text color */
+  font-family: 'Playfair Display', serif; /* Updated font family */
   font-size: 24px;
   font-weight: bold;
 }
 
 .navbar-toggler {
-  border-color: #28a745;
+  border-color: rgb(160, 138, 127); /* Updated toggler border color */
 }
 
 .navbar-toggler-icon {
-  color: #28a745;
+  color: rgb(227 172 144); /* Updated toggler icon color */
   font-size: 24px;
+  background-color: rgb(227 172 144);
 }
 
 .navbar-nav .nav-item .nav-link {
-  color: #333333;
+  color: rgb(240, 214, 187); /* Updated link color */
   font-size: 18px;
   margin-right: 15px;
   transition: color 0.3s;
 }
 
-.navbar-nav .nav-item .nav-link:hover,
+/* New hover styles for navbar items */
+.navbar-nav .nav-item .nav-link:hover {
+  background-color: rgb(160, 138, 127);
+  color: rgb(53, 53, 53);
+  padding-bottom: 5px;
+  transition: background-color 0.3s, padding-bottom 0.3s; /* Smooth transition */
+}
+
 .navbar-nav .nav-item .nav-link.active {
-  color: #28a745;
-  border-bottom: 2px solid #28a745;
+  color: rgb(160, 138, 127);
+  border-bottom: 2px solid rgb(160, 138, 127);
 }
 
 .contact-button {
-  margin-left: auto;
-  background-color: #28a745;
-  border-color: #28a745;
-  color: #ffffff;
+  margin-left: 5px;
+  background-color: rgb(160, 138, 127); /* Updated button background */
+  border-color: rgb(160, 138, 127); /* Updated button border */
+  color: rgb(240, 214, 187); /* Updated button text color */
+}
+
+/* Button hover styles */
+.contact-button:hover {
+  background-color: rgb(160, 138, 127);
+  color: rgb(53, 53, 53);
 }
 
 .dropdown-menu {
-  background-color: #ffffff;
-  border: 1px solid #28a745;
+  background-color: rgb(53, 53, 53); /* Updated dropdown background */
+  border: 1px solid rgb(160, 138, 127); /* Updated dropdown border */
   width: 100%;
   min-width: fit-content; /* Ensure the dropdown doesn't shrink below the button width */
 }
@@ -61,16 +74,17 @@
 }
 
 .dropdown-item {
-  color: #333333;
+  color: rgb(240, 214, 187); /* Updated dropdown item text color */
   padding: 10px 20px; /* Adjust padding for better spacing */
   font-size: 16px; /* Adjust font size for better readability */
   white-space: normal; /* Allow text to wrap */
   word-wrap: break-word; /* Break long words if necessary */
 }
 
+/* Dropdown item hover styles */
 .dropdown-item:hover {
-  background-color: #28a745;
-  color: #ffffff;
+  background-color: rgb(160, 138, 127);
+  color: rgb(53, 53, 53);
 }
 
 /* Mobile specific styles */

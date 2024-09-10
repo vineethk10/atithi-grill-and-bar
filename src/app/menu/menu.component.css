@@ -1,104 +1,127 @@
-/* src/app/menu/menu.component.css */
 .menu-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  font-family: 'Poppins', sans-serif;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  background-color: rgb(53, 53, 53); /* Updated background color */
+  border-radius: 12px;
+  margin-top: 30px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 .menu-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
   text-align: center;
-  font-size: 36px;
-  margin-bottom: 20px;
-  color: #28a745;
-  text-transform: uppercase;
+  color: rgb(240, 214, 187); /* Updated text color */
+  margin-bottom: 25px;
   font-weight: bold;
+  letter-spacing: 2px;
 }
 
 .order-now-button {
-  display: block;
-  text-align: center;
+  display: inline-block;
   margin: 20px auto;
-  font-size: 18px;
-  color: #fff;
-  background-color: #28a745;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 12px 24px;
+  background-color: rgb(160, 138, 127); /* Updated button background */
+  color: rgb(240, 214, 187); /* Updated button text color */
+  border-radius: 25px;
+  text-transform: uppercase;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
   text-decoration: none;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.order-now-button-container {
+  display: flex;
+  justify-content: center; /* Centers the button horizontally */
+  margin: 20px 0;
 }
 
 .order-now-button:hover {
-  background-color: #218838;
+  background-color: rgb(240, 214, 187); /* Updated hover background */
+  color: rgb(53, 53, 53); /* Updated hover text color */
 }
 
+/* Tab Styles */
 .nav-tabs {
   justify-content: center;
   margin-bottom: 30px;
-  border-bottom: 2px solid #ddd;
-  flex-wrap: wrap;
 }
 
-.nav-tabs .nav-item {
-  margin-bottom: -1px;
+.nav-tabs .nav-item .nav-link {
+  border: 1px solid rgb(160, 138, 127); /* Updated tab border */
+  color: rgb(160, 138, 127); /* Updated tab text color */
+  font-weight: bold;
+  border-radius: 0;
+  padding: 12px 24px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
-.nav-tabs .nav-link {
-  font-size: 18px;
-  color: #333;
-  background-color: #f1f1f1;
-  border: 1px solid #ddd;
-  border-radius: 5px 5px 0 0;
-  margin: 5px;
-  transition: background-color 0.3s, color 0.3s;
+.nav-tabs .nav-item .nav-link.active {
+  background-color: rgb(160, 138, 127); /* Updated active tab background */
+  color: rgb(240, 214, 187); /* Updated active tab text color */
 }
 
-.nav-tabs .nav-link.active {
-  background-color: #28a745;
-  color: #fff;
-  border-color: #28a745 #28a745 #ddd;
+.nav-tabs .nav-item .nav-link:hover {
+  background-color: rgb(240, 214, 187); /* Updated hover background */
+  color: rgb(53, 53, 53); /* Updated hover text color */
 }
 
-.nav-tabs .nav-link:hover {
-  background-color: #28a745;
-  color: #fff;
-}
-
+/* Menu Section Styling */
 .menu-section {
-  margin-bottom: 40px;
+  margin-top: 25px;
 }
 
 .menu-item {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
-  padding: 15px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.menu-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 15px 0;
+  border-bottom: 1px solid #ddd;
 }
 
 .menu-item-details {
-  flex: 1;
+  width: 100%;
 }
 
 .menu-item-name {
   font-size: 20px;
-  color: #333333;
-  margin-bottom: 5px;
+  font-family: 'Playfair Display', serif;
+  color: rgb(240, 214, 187); /* Updated name color */
   font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .menu-item-description {
-  font-size: 16px;
-  color: #666666;
+  font-size: 14px;
+  color: rgb(160, 138, 127); /* Updated description color */
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-bottom: 10px;
+}
+
+.menu-item-name::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: rgb(160, 138, 127); /* Updated underline color */
+  margin-top: 8px;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .menu-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-tabs {
+    flex-wrap: wrap;
+  }
+
+  .nav-tabs .nav-item {
+    margin-bottom: 10px;
+  }
 }

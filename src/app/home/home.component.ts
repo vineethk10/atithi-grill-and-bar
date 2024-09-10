@@ -11,7 +11,7 @@ import { NgOptimizedImage } from '@angular/common';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements AfterViewInit {
-  ourStoryImagePath = '../../assets/our-story.jpeg';
+  ourStoryImagePath = '../../assets/our-story.jpg';
 
   @ViewChild('heroVideo') heroVideo!: ElementRef<HTMLVideoElement>;
   @ViewChild('playPauseButton') playPauseButton!: ElementRef<HTMLButtonElement>;

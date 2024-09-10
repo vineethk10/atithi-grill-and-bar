@@ -1,10 +1,10 @@
 footer {
-  background-color: #f8f9fa;
-  color: #333333;
+  background-color: rgb(53, 53, 53); /* Updated background color */
+  color: rgb(240, 214, 187); /* Updated text color */
   text-align: center;
   padding: 1rem 0;
   width: 100%;
-  border-top: 2px solid #28a745;
+  border-top: 2px solid rgb(160, 138, 127); /* Updated border color */
 }
 
 .footer-content {
@@ -25,18 +25,29 @@ footer p {
 }
 
 .footer-links a {
-  color: #333333;
+  color: rgb(240, 214, 187); /* Updated link color */
   margin: 0 10px;
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color 0.3s, background-color 0.3s, padding 0.3s;
 }
 
 .footer-links a:hover {
-  color: #28a745;
+  color: rgb(160, 138, 127); /* Updated hover color */
+  background-color: rgba(240, 214, 187, 0.1); /* Highlight effect */
+  padding: 0.5rem;
+  border-radius: 5px;
 }
 
 .footer-links i {
   font-size: 1.2rem;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.footer-links i:hover {
+  color: rgb(160, 138, 127); /* Updated icon hover color */
+  background-color: rgba(240, 214, 187, 0.1); /* Highlight effect for icons */
+  padding: 0.5rem;
+  border-radius: 50%;
 }
 
 .powered-by {
@@ -45,12 +56,14 @@ footer p {
 }
 
 .powered-by a {
-  color: #28a745;
+  color: rgb(240, 214, 187); /* Updated powered-by link color */
   text-decoration: none;
   font-weight: normal;
+  transition: color 0.3s, text-decoration 0.3s;
 }
 
 .powered-by a:hover {
+  color: rgb(160, 138, 127);
   text-decoration: underline;
 }
 
