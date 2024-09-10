@@ -1,3 +1,9 @@
+.form-floating ~ label {
+  /* Corrected sibling selector applied */
+  font-family: 'Source Sans Pro', sans-serif;
+  color: rgb(240, 214, 187); 
+}
+
 .menu-container {
   padding: 40px;
   background-color: rgb(53, 53, 53); /* Updated background color */

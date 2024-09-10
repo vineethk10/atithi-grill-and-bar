@@ -81,3 +81,9 @@ footer p {
     font-size: 0.8rem;
   }
 }
+
+.form-floating ~ label {
+  /* Corrected sibling selector applied */
+  font-family: 'Source Sans Pro', sans-serif;
+  color: rgb(240, 214, 187); 
+}
