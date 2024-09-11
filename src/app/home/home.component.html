@@ -1,4 +1,9 @@
-<!-- src/app/home/home.component.html -->
+<div class="loader-wrapper" *ngIf="isLoading">
+  <div class="loader"></div>
+</div>
+
+
+<ng-container *ngIf="!isLoading">
 <header class="hero-section">
   <div class="video-container">
     <video #heroVideo class="d-block w-100" autoplay loop muted playsinline>
@@ -15,6 +20,21 @@
     </button>
   </div>
 </header>
+
+<section class="upcoming-events-section">
+  <div class="scroller-wrapper">
+    <div #scroller class="scroller">
+      <div class="scroller-content">
+        <ng-container *ngFor="let event of filteredEvents">
+          <div class="event-text">
+            <strong>{{ event.title }}</strong> - {{ event.description }} <br />
+            <span>{{ event.date | date: 'MMM d, yyyy' }}</span>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="our-story" id="about">
   <div class="container">
@@ -97,13 +117,12 @@
       <div class="contact-info">
         <p>Address: 130 Sundance Pkwy, Round Rock, TX 78681</p>
         <p>Phone: <a href="tel:+15125205197" aria-label="Call Us">(512) 520-5197</a></p>
-        <p>Email: <a href="mailto:info@atithigrillandbar.com" aria-label="Email Us">info&#64;atithigrillandbar.com</a></p>
+        <p>Email: <a href="mailto:atithigrillandbar@gmail.com" aria-label="Email Us">atithigrillandbar&#64;gmail.com</a></p>
       </div>
       <div class="hours-info">
         <h3>Hours</h3>
         <ul>
-          <li>Monday - Saturday: 9:00am - 9:00pm</li>
-          <li>Sunday: 9:00am - 12:00pm</li>
+          <li>Monday - Sunday: Lunch 10:00 AM - 3:00 PM | Dinner 5:00 PM - 10:00 PM</li>
         </ul>
       </div>
       <div class="map-container">
@@ -112,3 +131,4 @@
     </div>
   </div>
 </section>
+</ng-container>

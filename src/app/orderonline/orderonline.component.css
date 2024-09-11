@@ -20,7 +20,7 @@
 .order-online-container p {
     font-size: 18px;
     margin-bottom: 40px;
-    color: rgb(160, 138, 127); /* Updated paragraph color */
+    color: rgb(240, 214, 187);
 }
 
 .order-section, .reservation-section {
@@ -137,12 +137,12 @@
 
 .reservation-section p {
     font-size: 18px;
-    color: rgb(160, 138, 127); /* Updated paragraph color */
+    color: rgb(240, 214, 187); /* Updated paragraph color */
     margin-bottom: 10px;
 }
 
 .reservation-section a {
-    color: rgb(160, 138, 127); /* Updated link color */
+    color: rgb(240, 214, 187); /* Updated link color */
     text-decoration: none;
 }
 

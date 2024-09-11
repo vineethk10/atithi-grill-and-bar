@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule, DatePipe } from '@angular/common';
-import { NgOptimizedImage } from '@angular/common';
+import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 interface Event {
   title: string;
@@ -10,21 +9,13 @@ interface Event {
   width: number;
   height: number;
   bookingLink?: string;
-  bookingMessage?: string; // Add a property for booking message
 }
 
-@Component({
-  selector: 'app-events',
-  standalone: true,
-  imports: [CommonModule, NgOptimizedImage, DatePipe],
-  templateUrl: './events.component.html',
-  styleUrls: ['./events.component.css']
+@Injectable({
+  providedIn: 'root'
 })
-export class EventsComponent implements OnInit {
-  isContentLoading = true;  // Show loader initially
-  loadedCount = 0;          // Track the number of loaded images
-  totalImages = 0;          // Total number of images to load
-  upcomingEvents: Event[] = [
+export class EventService {
+  private upcomingEvents: Event[] = [
     {
       title: 'Fourth of July Celebration',
       description: 'Join us for a spectacular Fourth of July celebration with fireworks, music, and delicious food. Bring your family and friends for a night to remember!',
@@ -59,16 +50,15 @@ export class EventsComponent implements OnInit {
       width: 1080,
       height: 1080
     },
-    {
-      title: 'Thanksgiving Dinner',
-      description: 'Join us for a delightful Thanksgiving Dinner at Atithi Grill and Bar. Enjoy a traditional Thanksgiving meal with a South Asian twist. Bring your family and friends to celebrate!',
-      date: new Date('2024-11-28T00:00:00'),
-      imageUrl: '../../assets/Events/thanksgivingdinner-2024.jpg',
-      width: 1080,
-      height: 1080,
-      bookingLink: ''
-    },
-  
+    // {
+    //   title: 'Thanksgiving Dinner',
+    //   description: 'Join us for a delightful Thanksgiving Dinner at Atithi Grill and Bar. Enjoy a traditional Thanksgiving meal with a South Asian twist. Bring your family and friends to celebrate!',
+    //   date: new Date('2024-11-28T00:00:00'),
+    //   imageUrl: '../../assets/Events/thanksgivingdinner-2024.jpg',
+    //   width: 1080,
+    //   height: 1080,
+    //   bookingLink: ''
+    // },
     {
       title: 'Musical Evening with Abhishek Kumar',
       date: new Date('2024-08-13'),
@@ -78,33 +68,22 @@ export class EventsComponent implements OnInit {
       height: 354,
       bookingLink: ''
     },
+    {
+      title: 'Noche de Fiesta',
+      description: 'Join us for the biggest Mexican festival with drinks, food, music. Featuring special guest DJ Albert-I.',
+      date: new Date('2024-09-14T19:00:00'), // Event date: September 14th, 7 PM
+      imageUrl: '../../assets/Events/nochedefiesta-1.jpeg', // Reference the uploaded image
+      width: 1600,
+      height: 900,
+      bookingLink: '' // No booking link provided, can be added later if necessary
+    },
 ];
 
-  sortedEvents: Event[] = [];
+  constructor() {}
 
-  ngOnInit(): void {
-    this.sortedEvents = this.upcomingEvents.sort((a, b) => b.date.getTime() - a.date.getTime());
-    this.totalImages = this.sortedEvents.length;
-  }
-
-  onContentLoad(): void {
-    this.loadedCount++;
-    if (this.loadedCount === this.totalImages) {
-      this.isContentLoading = false;  // Hide loader when all images are loaded
-    }
-  }
-
-  isPastEvent(date: Date): boolean {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    return date < today;
-  }
-
-  bookEvent(event: Event): void {
-    if (event.bookingLink) {
-      window.location.href = event.bookingLink;
-    } else {
-      event.bookingMessage = `Booking for the event "${event.title}" has not yet started.`;
-    }
+  // Fetch sorted upcoming events
+  getUpcomingEvents(): Observable<Event[]> {
+    const sortedEvents = this.upcomingEvents.sort((a, b) => a.date.getTime() - b.date.getTime());
+    return of(sortedEvents);
   }
 }

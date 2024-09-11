@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
 import { OrderonlineComponent } from './orderonline/orderonline.component';
-import { EventsComponent } from './components/events/events.component';
+import { EventsComponent } from './events/events.component';
 
 export const routes: Routes = [ 
     { path: '', component: HomeComponent },
