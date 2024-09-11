@@ -23,7 +23,7 @@ interface Event {
 export class EventsComponent implements OnInit {
   isContentLoading = true;  // Show loader initially
   loadedCount = 0;          // Track the number of loaded images
-  totalAssets = 0;          // Total number of assest to load
+  totalImages = 0;          // Total number of Images to load
   upcomingEvents: Event[] = [
     {
       title: 'Fourth of July Celebration',
@@ -92,16 +92,13 @@ export class EventsComponent implements OnInit {
 
   ngOnInit(): void {
     this.sortedEvents = this.upcomingEvents.sort((a, b) => b.date.getTime() - a.date.getTime());
-    this.totalAssets = this.sortedEvents.length;
+    this.totalImages = this.sortedEvents.length;  // Set the total number of images
   }
 
-  onContentLoad(): void {
+  onImageLoad(): void {
     this.loadedCount++;
-    if (this.loadedCount >= this.totalAssets) {
-      // Hide loader once all events' images are either loaded or errored
-      setTimeout(() => {
-        this.isContentLoading = false;
-      }, 500); // Optional small delay for smooth transition
+    if (this.loadedCount === this.totalImages) {
+      this.isContentLoading = false;  // Hide loader when all images are loaded
     }
   }
 

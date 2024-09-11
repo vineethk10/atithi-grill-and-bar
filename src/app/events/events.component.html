@@ -14,8 +14,11 @@
       <div class="event-card" *ngFor="let event of sortedEvents">
         <div class="card">
           <div class="image-container">
-            <img [ngSrc]="event.imageUrl" [width]="event.width" [height]="event.height" class="card-img-top" [alt]="event.title" (load)="onContentLoad()" 
-            (error)="onContentLoad()">
+            <img [ngSrc]="event.imageUrl" [width]="event.width" [height]="event.height" 
+            loading="eager" 
+            class="card-img-top" 
+            [alt]="event.title" (load)="onImageLoad()" 
+            (error)="onImageLoad()">
           </div>
           <div class="card-body">
             <h5 class="card-title">{{ event.title }}</h5>
