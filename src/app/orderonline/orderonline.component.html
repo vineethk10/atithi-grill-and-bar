@@ -1,69 +1,47 @@
-<!-- src/app/orderonline/orderonline.component.html -->
-<div class="order-online-container">
+<!-- Loader to display while content is loading -->
+<div *ngIf="isLoading" class="loader-wrapper">
+    <div class="loader"></div>
+  </div>
+  
+  <div class="order-online-container" *ngIf="!isLoading">
     <div class="order-section">
-        <h3>Order Online</h3>
-        <p>Choose your preferred platform to order from Atithi Grill and Bar:</p>
-        
-        <!-- Order Directly from Us -->
-        <div class="order-direct">
-            <a href="https://www.clover.com/online-ordering/atithi-grill--bar-round-rock" target="_self" class="order-direct-link">Order Directly from Us</a>
-        </div>
-        
-        <div class="order-buttons">
-            <div class="order-option">
-                <a href="https://order.online/business/atithi-grill-and-bar-12919228" target="_self">
-                    <img src="../../assets/doordash-logo.svg" alt="Order on DoorDash">
-                    <span>Order on DoorDash</span>
-                </a>
-            </div>
-            <div class="order-option">
-                <a href="https://www.order.store/store/atithi-grill-and-bar/NfEkXq8pRNyK8cDE5NGV7Q" target="_self">
-                    <img src="../../assets/uber-eats.svg" alt="Order on UberEats">
-                    <span>Order on UberEats</span>
-                </a>
-            </div>
-            <div class="order-option">
-                <a href="http://menus.fyi/8561360" target="_self">
-                    <img src="../../assets/grub-hub.svg" alt="Order on GrubHub">
-                    <span>Order on GrubHub</span>
-                </a>
-            </div>
-        </div>
-    </div> 
+      <h3>Order Online</h3>
+      <p>Choose your preferred platform to order from Atithi Grill and Bar:</p>
 
-    <!-- <div class="order-direct">
-        <a>Order Directly from Us</a>
+      <!-- Order Directly from Us -->
+      <div class="order-direct">
+        <a href="https://www.clover.com/online-ordering/atithi-grill--bar-round-rock" target="_self" class="order-direct-link">Order Directly from Us</a>
     </div>
-    
-    <div class="order-buttons">
+  
+      <div class="order-buttons">
         <div class="order-option">
-            <a>
-                <img src="../../assets/doordash-logo.svg" alt="Order on DoorDash">
-                <span>Coming Soon</span>
-            </a>
+          <a href="https://order.online/business/atithi-grill-and-bar-12919228" target="_self">
+            <img #imageElement src="../../assets/doordash-logo.svg" alt="Order on DoorDash">
+            <span>Order on DoorDash</span>
+          </a>
         </div>
         <div class="order-option">
-            <a>
-                <img src="../../assets/uber-eats.svg" alt="Order on UberEats">
-                <span>Coming Soon</span>
-            </a>
+          <a href="https://www.order.store/store/atithi-grill-and-bar/NfEkXq8pRNyK8cDE5NGV7Q" target="_self">
+            <img #imageElement src="../../assets/uber-eats.svg" alt="Order on UberEats">
+            <span>Order on UberEats</span>
+          </a>
         </div>
         <div class="order-option">
-            <a>
-                <img src="../../assets/grub-hub.svg" alt="Order on GrubHub">
-                <span>Coming Soon</span>
-            </a>
+          <a href="http://menus.fyi/8561360" target="_self">
+            <img #imageElement src="../../assets/grub-hub.svg" alt="Order on GrubHub">
+            <span>Order on GrubHub</span>
+          </a>
         </div>
+      </div>
     </div>
-</div> -->
-    
+  
     <div class="reservation-section">
-        <h3>Make a Reservation</h3>
-        <p>Enjoy a dine-in experience at Atithi Grill and Bar. Contact us to make a reservation:</p>
-        <div class="reservation-details">
-            <p><strong>Address:</strong> 130 Sundance Pkwy, Round Rock, TX 78681</p>
-            <p><strong>Phone:</strong> <a href="tel:+15125205197">(512) 520-5197</a></p>
-            <p><strong>Email:</strong> <a href="mailto:info@atithigrillandbar.com">info&#64;atithigrillandbar.com</a></p>
-        </div>
+      <h3>Make a Reservation</h3>
+      <p>Enjoy a dine-in experience at Atithi Grill and Bar. Contact us to make a reservation:</p>
+      <div class="reservation-details">
+        <p><strong>Address:</strong> 130 Sundance Pkwy, Round Rock, TX 78681</p>
+        <p><strong>Phone:</strong> <a href="tel:+15125205197">(512) 520-5197</a></p>
+        <p><strong>Email:</strong> <a href="mailto:info@atithigrillandbar.com">info&#64;atithigrillandbar.com</a></p>
+      </div>
     </div>
-</div>
+  </div>  
