@@ -53,10 +53,31 @@ export class NavbarComponent implements OnInit {
     }
   }
 
-  onNavItemClick(event: Event) {
-    if (this.isBrowser && !this.isNavbarCollapsed) {
-      this.toggleNavbar();
+  onNavItemClick(event: Event, sectionId: string) {
+    if (this.isBrowser) {
+      if (!this.isNavbarCollapsed) {
+        this.toggleNavbar();  // Close navbar on mobile
+      }
+      this.setActiveLink(event);
+      this.scrollToSection(sectionId);
     }
-    this.setActiveLink(event);
+  }
+
+  scrollToSection(sectionId: string) {
+    const section = document.getElementById(sectionId);
+
+    if (section) {
+      // Delay to allow the browser's natural scroll to complete first
+      setTimeout(() => {
+        const headerOffset = 0;  // Adjust this value based on your fixed header height
+        const elementPosition = section.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'  // Smooth scrolling
+        });
+      }, 100);  // Adjust the delay if needed
+    }
   }
 }
