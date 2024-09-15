@@ -25,10 +25,18 @@
   <div class="scroller-wrapper">
     <div #scroller class="scroller">
       <div class="scroller-content">
-        <ng-container *ngFor="let event of filteredEvents">
-          <div class="event-text">
+        <!-- Display events if available -->
+        <ng-container *ngIf="filteredEvents && filteredEvents.length > 0">
+          <div class="event-text" *ngFor="let event of filteredEvents">
             <strong>{{ event.title }}</strong> - {{ event.description }} <br />
             <span>{{ event.date | date: 'MMM d, yyyy' }}</span>
+          </div>
+        </ng-container>
+
+        <!-- Show no events message when there are no events -->
+        <ng-container *ngIf="!filteredEvents.length">
+          <div class="event-text">
+          <strong>{{ noEventsMessage }}</strong>
           </div>
         </ng-container>
       </div>
