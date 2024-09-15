@@ -49,27 +49,26 @@ export class HomeComponent implements AfterViewInit, OnInit {
       }
 
       this.isLoading = false; // Stop loader after loading events or showing the message
-      this.checkAllLoaded();
-    }, error => {
-      console.error('Error fetching events:', error);
-      this.isLoading = false; // Ensure loader is hidden if event fetching fails
     });
+
+    // Set a timeout to ensure the loader stops after a reasonable time even if images are slow
+    setTimeout(() => {
+      if (this.isLoading) {
+        // console.warn('Timeout reached, stopping loader.');
+        this.isLoading = false;
+      }
+    }, 5000); // 5 seconds timeout for slow loading scenarios
+
+    this.loadAssets();
   }
 
-  ngAfterViewInit() {
-    if (this.heroVideo && this.heroVideo.nativeElement) {
-      this.loadAssets(); // Load images and other assets
-    }
-    if (this.playPauseButton && this.playPauseButton.nativeElement) {
-      this.playPauseButton.nativeElement.addEventListener('click', this.togglePlayPause.bind(this));
-    }
+  ngAfterViewInit(): void {
     this.setScrollerAnimation();
   }
 
-  // Improved loadAssets method
   loadAssets() {
     const assets = [
-      '../../assets/our-story.jpg',
+      this.ourStoryImagePath,
       '../../assets/fusion-cuisine-new.jpeg',
       '../../assets/cocktails.jpg',
       '../../assets/live-music.jpeg',
@@ -88,7 +87,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
       // Handle image loading success
       this.renderer.listen(imgElement, 'load', () => {
         loadedCount++;
-        console.log(`Asset loaded: ${assetUrl}`);
+        // console.log(`Asset loaded: ${assetUrl}`);
         if (loadedCount === assets.length) {
           this.isLoading = false; // All assets loaded successfully
         }
@@ -96,7 +95,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
 
       // Handle image loading error
       this.renderer.listen(imgElement, 'error', () => {
-        console.error(`Failed to load asset: ${assetUrl}`);
+        // console.error(`Failed to load asset: ${assetUrl}`);
         this.isLoading = false; // Stop loader even if there are loading errors
       });
     });
@@ -133,7 +132,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
   checkAllLoaded() {
     // Ensure that the loading state is properly managed
     if (!this.isLoading) {
-      console.log('All assets and events are loaded successfully.');
+      // console.log('All assets and events are loaded successfully.');
     }
   }
 }
