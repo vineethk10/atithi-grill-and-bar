@@ -15,8 +15,8 @@
       <p>Experience the vibrant flavors of South East Asian cuisine in the heart of Austin Round Rock, Texas.</p>
       <a class="btn btn-primary" routerLink="/menu" aria-label="Menu">View Menu</a>
     </div>
-    <button #playPauseButton class="play-pause-btn">
-      <i class="fas fa-pause"></i>
+    <button class="play-pause-btn" (click)="togglePlayPause()" [attr.aria-label]="isVideoPaused ? 'Play video' : 'Pause video'">
+      <i class="fas" [ngClass]="isVideoPaused ? 'fa-play' : 'fa-pause'"></i>
     </button>
   </div>
 </header>
