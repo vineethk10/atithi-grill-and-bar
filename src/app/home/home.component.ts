@@ -2,17 +2,7 @@ import { Component, AfterViewInit, ViewChild, ElementRef, OnInit, NgZone, Render
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NgOptimizedImage } from '@angular/common';
-import { EventService } from '../events/event.service';
-
-interface Event {
-  title: string;
-  description: string;
-  date: Date;
-  imageUrl: string;
-  width: number;
-  height: number;
-  bookingLink?: string;
-}
+import { Event, EventService } from '../events/event.service';
 
 @Component({
   selector: 'app-home',
@@ -27,9 +17,9 @@ export class HomeComponent implements AfterViewInit, OnInit {
   isLoading: boolean = true;
   filteredEvents: Event[] = [];
   noEventsMessage: string = ''; // Message to display if no events
+  isVideoPaused = false;
 
   @ViewChild('heroVideo') heroVideo!: ElementRef<HTMLVideoElement>;
-  @ViewChild('playPauseButton') playPauseButton!: ElementRef<HTMLButtonElement>;
   @ViewChild('scroller') scroller!: ElementRef;
 
   constructor(private eventService: EventService, private ngZone: NgZone, private renderer: Renderer2) {}
@@ -104,8 +94,10 @@ export class HomeComponent implements AfterViewInit, OnInit {
   togglePlayPause() {
     if (this.heroVideo.nativeElement.paused) {
       this.heroVideo.nativeElement.play();
+      this.isVideoPaused = false;
     } else {
       this.heroVideo.nativeElement.pause();
+      this.isVideoPaused = true;
     }
   }
 
